@@ -1,0 +1,70 @@
+/*! this is the new css file for week2 hw */
+ul {
+    border:1px solid #111;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+  }
+  
+  li {
+    display:inline;
+  }
+  
+  li a {
+    display:inline-block;
+    padding:10px;
+    text-decoration: none;
+    color: blueviolet;
+  }
+  
+  li a:hover {
+    background-color: #ccc;
+  }
+  aside {
+      padding-top: 100px;
+  }
+
+  body {
+      margin: 50px;
+    background: #fff;
+    box-shadow:
+    /* The top layer shadow */
+    0 -1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 -10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 -10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 -20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 -20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    padding: 30px;
+    background-image: url('../img/background-paper.jpeg');
+  }
+  .header-container h1 {
+      text-align: center;
+  }
+
+article {
+    float: left;
+    width: 60%;
+    padding: 30px;
+    margin-right: 30px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+.footer-container footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 20px 0;
+    width: 100%;
+    text-align: center;
+    border-top: #111 1px solid;
+  }
+  * {
+    font-family: 'Noticia Text', serif;
+  }
