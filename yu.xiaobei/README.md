@@ -6,4 +6,4 @@ WNM 617 2021 Fall Section 01 Onsite
 This course will require you to push content changes at least once a week. Your progress will be tracked throughout the semester, so make sure you're keeping up with the workload.
 
 Code links:
-Midterm project https://www.amyatseattle.com/aau/wnm617/yu.xiaobei/index.html
+Midterm project http://www.amyatseattle.com/aau/wnm617/yu.xiaobei/index.html
