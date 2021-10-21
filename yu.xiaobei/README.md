@@ -7,7 +7,10 @@ This course will require you to push content changes at least once a week. Your 
 
 Code links:
 Midterm project http://www.amyatseattle.com/aau/wnm617/yu.xiaobei/index.html
+
 Initializer css: http://www.amyatseattle.com/aau/wnm617/yu.xiaobei/initializr/
+
 Midterm design doc: https://s3.amazonaws.com/www.amyatseattle.com/aau/wnm617/yu.xiaobei/Yu_m03_Explorations.pdf
+
 Profile: http://www.amyatseattle.com/aau/wnm617/yu.xiaobei/profile/index.html
 
