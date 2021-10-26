@@ -454,3 +454,6 @@ a {
   position: absolute;
   bottom:   20px;
 }
+.animal-profile-middle {
+  margin: 0 auto;
+}
