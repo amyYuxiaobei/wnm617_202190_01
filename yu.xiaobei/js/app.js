@@ -43,8 +43,7 @@ $(()=>{
       let target = $(this).data("activateone");
       console.log(target)
       $(target).addClass("active").siblings().removeClass('active');
-   })
-   ;
+   });
 
 
    $("[data-template]").each(function(){
@@ -59,12 +58,3 @@ $(()=>{
    }[location.hash]).addClass("active");
 
 });
-
-function openCity(cityName) {
-   var i;
-   var x = document.getElementsByClassName("city");
-   for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
-   }
-   document.getElementById(cityName).style.display = "block";  
- }
