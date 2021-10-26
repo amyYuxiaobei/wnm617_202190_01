@@ -110,9 +110,31 @@
 
    <section data-role="page" id="page-user-profile">
       <div data-role="main" class="overscroll">
-         USER!
+         <img src="img/profile.jpeg" class="profile-image"/>
+         <div class="profile-content">
+            <p>
+               <span class="profile-icon"><img class="icon" src="img/icons/person.svg"></span>
+               <strong>user name: </strong> xiaobei
+               <span class="profile-icon"><img class="icon" src="img/icons/edit.svg"></span>
+            </p>
+            <p>
+               <span class="profile-icon"><img class="icon" src="img/icons/email.svg"></span>
+               <strong>email: </strong> example@email.com
+               <span class="profile-icon"><img class="icon" src="img/icons/edit.svg"></span>
+            </p>
+            <p>
+               <span class="profile-icon"><img class="icon" src="img/icons/place.svg"></span>
+               <strong>region: </strong>seattle
+               <span class="profile-icon"><img class="icon" src="img/icons/edit.svg"></span>
+            </p>
+            <p>
+               <span class="profile-icon"><img class="icon" src="img/icons/description.svg"></span>
+               <strong>description: </strong> A pet lover.
+               <span class="profile-icon"><img class="icon" src="img/icons/edit.svg"></span>
+            </p>
+         </div>
          <div>
-            <button class="form-button js-logout">Log Out</button>
+            <button class="form-button js-logout stay-bottom">Log Out</button>
          </div>
       </div>
       <footer data-role="footer" data-template="#footer-template"></footer>
@@ -162,11 +184,19 @@
                   </div>
                   <div class="form-control">
                      <label for="animal-add-type" class="form-label">Type</label>
-                     <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="Name">
+                     <input type="text" id="animal-add-type" class="form-input" data-role="none" placeholder="Type">
                   </div>
                   <div class="form-control">
                      <label for="animal-add-breed" class="form-label">Breed</label>
-                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="Name">
+                     <input type="text" id="animal-add-breed" class="form-input" data-role="none" placeholder="Breed">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-add-color" class="form-label">Color</label>
+                     <input type="text" id="animal-add-color" class="form-input" data-role="none" placeholder="Color">
+                  </div>
+                  <div class="form-control">
+                     <label for="animal-add-age" class="form-label">Age</label>
+                     <input type="text" id="animal-add-age" class="form-input" data-role="none" placeholder="Age">
                   </div>
                </div>
             </div>
@@ -189,7 +219,20 @@
          </ul>
       </header>
       <div data-role="main">
-         Animal!
+         <form name="select-animal-form" id="select-animal-form">
+            <input type="checkbox" id="animal1" name="animal1" value="Animal1">
+            <label for="animal1"> Animal1</label><br>
+            <input type="checkbox" id="animal2" name="animal2" value="Animal2">
+            <label for="animal2"> Animal2</label><br>
+            <input type="checkbox" id="animal3" name="animal3" value="Animal3">
+            <label for="animal3"> Animal3</label><br>
+            <input type="checkbox" id="animal4" name="animal4" value="Animal4">
+            <label for="animal4"> Animal4</label><br>
+            <input type="checkbox" id="animal5" name="animal5" value="Animal5">
+            <label for="animal5"> Animal5</label><br>
+            <input type="checkbox" id="animal6" name="animal6" value="Animal6">
+            <label for="animal6"> Animal6</label><br>
+         </form>
       </div>
    </section>
 
@@ -204,7 +247,7 @@
          </ul>
       </header>
       <div data-role="main">
-         Animal!
+         <div class="map"></div>
       </div>
    </section>
 
@@ -219,12 +262,30 @@
          </ul>
       </header>
       <div data-role="main">
-         Animal!
+         <label for="description"> Description for animal</label><br>
+         <textarea id="description" name="description" rows="20" cols="40" data-role="none">
+         </textarea>
       </div>
    </section>
 
 
-
+   <script type="text/template" id="dropdown-template">
+      <form name="form1" id="form1" action="/action_page.php">
+         Subjects: <select name="subject" id="subject">
+               <option value="" selected="selected">Select subject</option>
+            </select>
+            <br><br>
+         Topics: <select name="topic" id="topic">
+               <option value="" selected="selected">Please select subject first</option>
+            </select>
+            <br><br>
+         Chapters: <select name="chapter" id="chapter">
+               <option value="" selected="selected">Please select topic first</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">  
+      </form>
+   </script>
 
    <script type="text/template" id="footer-template">
    <ul class="nav-icon-set">

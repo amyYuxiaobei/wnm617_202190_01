@@ -58,5 +58,4 @@ $(()=>{
       "#page-user-profile":".nav-icon-set li:nth-child(3)",
    }[location.hash]).addClass("active");
 
-
 });

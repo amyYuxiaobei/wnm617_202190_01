@@ -13,6 +13,7 @@
    --color-darkblue: #064acb;
    --color-yellow: #f3a953;
    --color-pink: #f27370;
+   --color-lightblue: #39C9F9;
 
 
    --font-sans: Helvetica, Arial, sans-serif;
@@ -350,6 +351,10 @@ a {
   height: 1em;
   display: inline-block;
 }
+.profile-icon {
+  line-height: 2rem;
+  font-size: 1.5rem;
+}
 .nav-icon {
   display: block;
   line-height: 2rem;
@@ -364,7 +369,7 @@ a {
   font-size: 0.7rem;
 }
 .nav-icon-set li.active {
-  background-color: var(--color-pink);
+  background-color: var(--color-lightblue);
 }
 .nav-icon-set li{
    background-color: var(--color-darkblue);
@@ -432,4 +437,20 @@ a {
 
 #logo{
    margin-top: 40%;
+}
+
+.profile-image {
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 20%;
+}
+.profile-content {
+  margin-left: 20%;
+}
+.stay-bottom {
+  position: absolute;
+  bottom:   20px;
 }
