@@ -1,0 +1,92 @@
+[
+    {
+      "id": 1,
+      "name": "Bennett Fernandez",
+      "username": "user1",
+      "email": "user1@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/778/fff/?text=user1",
+      "date_create": "2021-05-03 04:28:03"
+    },
+    {
+      "id": 2,
+      "name": "Bates Cleveland",
+      "username": "user2",
+      "email": "user2@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/972/fff/?text=user2",
+      "date_create": "2020-08-04 09:09:44"
+    },
+    {
+      "id": 3,
+      "name": "Tate Cross",
+      "username": "user3",
+      "email": "user3@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/885/fff/?text=user3",
+      "date_create": "2020-05-23 12:25:27"
+    },
+    {
+      "id": 4,
+      "name": "Copeland Guerra",
+      "username": "user4",
+      "email": "user4@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/766/fff/?text=user4",
+      "date_create": "2020-08-26 04:58:39"
+    },
+    {
+      "id": 5,
+      "name": "Harvey Davenport",
+      "username": "user5",
+      "email": "user5@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/738/fff/?text=user5",
+      "date_create": "2020-05-03 10:50:50"
+    },
+    {
+      "id": 6,
+      "name": "Merrill Francis",
+      "username": "user6",
+      "email": "user6@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/991/fff/?text=user6",
+      "date_create": "2021-06-01 02:48:17"
+    },
+    {
+      "id": 7,
+      "name": "Cecilia Tillman",
+      "username": "user7",
+      "email": "user7@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/701/fff/?text=user7",
+      "date_create": "2021-09-03 01:55:10"
+    },
+    {
+      "id": 8,
+      "name": "Hewitt Valdez",
+      "username": "user8",
+      "email": "user8@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/945/fff/?text=user8",
+      "date_create": "2020-04-07 11:32:20"
+    },
+    {
+      "id": 9,
+      "name": "Kasey Foley",
+      "username": "user9",
+      "email": "user9@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/950/fff/?text=user9",
+      "date_create": "2021-09-28 05:16:14"
+    },
+    {
+      "id": 10,
+      "name": "Brenda Burris",
+      "username": "user10",
+      "email": "user10@gmail.com",
+      "password": "md5(pass)",
+      "img": "https://via.placeholder.com/400/843/fff/?text=user10",
+      "date_create": "2020-07-14 01:22:31"
+    }
+  ]
