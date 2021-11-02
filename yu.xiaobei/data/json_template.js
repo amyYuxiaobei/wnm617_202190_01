@@ -45,7 +45,7 @@
         return chosen_type[chosen_index];
       },
       
-      description: '{{lorem(3,"sentences")}}',
+      description: '{{lorem(10,"words")}}',
       color: function(tags) {
         var colors = ['white', 'black', 'brown', 'mixed']
         var chosen_index = tags.integer(0,3);
@@ -69,7 +69,7 @@
       lat: '{{floating(37.801515, 37.699475)}}',
       lng: '{{floating(-122.506533, -122.388415)}}',
       
-      description: '{{lorem(3,"sentences")}}',
+      description: '{{lorem(10,"words")}}',
       
       photo: 'https://via.placeholder.com/400/',
       icon: 'https://via.placeholder.com/400/?text=ICON',
