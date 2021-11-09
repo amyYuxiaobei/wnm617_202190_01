@@ -2,9 +2,9 @@
 const makeAnimalList = templater((o)=>`
 <div class="animallist-item">
 <div class="display-flex animal-jump" data-id="${o.id}">
-   <div class="flex-none animallist-item-image">
-      <img src="${o.img}" alt="">
-   </div>
+    <div class="flex-none animallist-item-image">
+        <img src="img/animal.jpeg" alt="">
+    </div>
    <div class="flex-stretch animallist-item-body padding-md">
       <div class="animallist-item-name">${o.name}</div>
       <div class="animallist-item-type"><strong>Type</strong> ${o.type}</div>
