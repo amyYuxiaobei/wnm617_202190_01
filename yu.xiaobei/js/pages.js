@@ -34,6 +34,26 @@ const RecentPage = async() => {
 
    let mapEl = await makeMap("#page-recent .map");
    makeMarkers(mapEl,animals);
+
+   let {infoWindow,map,markers} = mapEl.data();
+   markers.forEach((o,i)=>{
+      o.addListener("click",function(){
+
+         /* Simple Example */
+         // sessionStorage.animalId = animals[i].animal_id;
+         // $.mobile.navigate("#page-animal-profile")
+
+         /* InfoWindow Example */
+         infoWindow.open(map,o);
+         infoWindow.setContent(makeAnimalPopup(animals[i]))
+
+         /* Activate Example */
+         // $("#recent-drawer")
+         //    .addClass("active")
+         //    .find(".modal-body")
+         //    .html(makeAnimalPopup(animals[i]))
+      })
+   });
 }
 
 
@@ -45,7 +65,18 @@ const UserProfilePage = async() => {
    let [user] = result;
    $("#page-user-profile [data-role='main']").html(makeUserProfile(user));
 }
+const UserEditPage = async() => {
+   let user_result = await resultQuery({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   });
 
+   let [user] = user_result;
+   
+   $("#user-edit-form .fill-parent").html(
+      makeUserFormInputs(user,"user-edit")
+   );
+}
 
 const AnimalProfilePage = async() => {
    let animal_result = await resultQuery({
@@ -71,9 +102,18 @@ const AnimalEditPage = async() => {
    });
 
    let [animal] = animal_result;
-   $(".animal-profile-top img").attr("src",animal.img);
-
-   $("#animal-edit-name").val(animal.name);
-   $("#animal-edit-type").val(animal.type);
-   $("#animal-edit-breed").val(animal.breed);
+   
+   $("#animal-edit-form .fill-parent").html(
+      makeAnimalFormInputs(animal,"animal-edit")
+   );
+}
+const AnimalAddPage = async() => {
+   $("#animal-add-form .fill-parent").html(
+      makeAnimalFormInputs({
+         name:'',
+         type:'',
+         breed:'',
+         description:''
+      },"animal-add")
+   );
 }
