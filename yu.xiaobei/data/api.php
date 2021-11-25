@@ -75,7 +75,7 @@ function makeStatement($data) {
 
 
          case "check_signin":
-            return makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? AND `password`=?",$p);
+            return makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? AND `password`=md5(?)",$p);
 
          case "recent_animal_locations":
             return makeQuery($c,"SELECT *
