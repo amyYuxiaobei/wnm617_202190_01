@@ -55,41 +55,41 @@ function makeStatement($data) {
 
       switch($t) {
          // case "users_all":
-         //    return makeQuery($c,"SELECT * FROM `track_202190_users`",$p);
+         //    return makeQuery($c,"SELECT * FROM `track_users`",$p);
          // case "animals_all":
-         //    return makeQuery($c,"SELECT * FROM `track_202190_animals`",$p);
+         //    return makeQuery($c,"SELECT * FROM `track_animals`",$p);
          // case "locations_all":
-         //    return makeQuery($c,"SELECT * FROM `track_202190_locations`",$p);
+         //    return makeQuery($c,"SELECT * FROM `track_locations`",$p);
 
          // CRUD 
 
          /* READ */
 
          case "user_by_id":
-            return makeQuery($c,"SELECT id,username,name,email,img FROM `track_202190_users` WHERE `id`=?",$p);
+            return makeQuery($c,"SELECT id,username,name,email,img FROM `track_users` WHERE `id`=?",$p);
          case "animal_by_id":
-            return makeQuery($c,"SELECT * FROM `track_202190_animals` WHERE `id`=?",$p);
+            return makeQuery($c,"SELECT * FROM `track_animals` WHERE `id`=?",$p);
          case "location_by_id":
-            return makeQuery($c,"SELECT * FROM `track_202190_locations` WHERE `id`=?",$p);
+            return makeQuery($c,"SELECT * FROM `track_locations` WHERE `id`=?",$p);
 
          case "animals_by_user_id":
-            return makeQuery($c,"SELECT * FROM `track_202190_animals` WHERE `user_id`=?",$p);
+            return makeQuery($c,"SELECT * FROM `track_animals` WHERE `user_id`=?",$p);
          case "locations_by_animal_id":
-            return makeQuery($c,"SELECT * FROM `track_202190_locations` WHERE `animal_id`=?",$p);
+            return makeQuery($c,"SELECT * FROM `track_locations` WHERE `animal_id`=?",$p);
 
 
          case "check_signin":
-            return makeQuery($c,"SELECT id FROM `track_202190_users` WHERE `username`=? AND `password`=md5(?)",$p);
+            return makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? AND `password`=md5(?)",$p);
 
          case "recent_animal_locations":
             return makeQuery($c,"SELECT *
-               FROM `track_202190_animals` a
+               FROM `track_animals` a
                JOIN (
                   SELECT lg.*
-                  FROM `track_202190_locations` lg
+                  FROM `track_locations` lg
                   WHERE lg.id = (
                      SELECT lt.id
-                     FROM `track_202190_locations` lt
+                     FROM `track_locations` lt
                      WHERE lt.animal_id = lg.animal_id
                      ORDER BY lt.date_create DESC
                      LIMIT 1
@@ -105,11 +105,11 @@ function makeStatement($data) {
          /* CREATE */
 
          case "insert_user":
-            $r = makeQuery($c,"SELECT id FROM `track_202190_users` WHERE `username`=? OR `email` = ?",$p);
+            $r = makeQuery($c,"SELECT id FROM `track_users` WHERE `username`=? OR `email` = ?",$p);
             if(count($r['result'])) return ["error"=>"Username or Email already exists"];
 
             $r = makeQuery($c,"INSERT INTO
-               `track_202190_users`
+               `track_users`
                (`username`, `email`, `password`, `img`, `date_create`)
                VALUES
                (?, ?, md5(?), 'http://via.placeholder.com/400/?text=USER', NOW())
@@ -118,7 +118,7 @@ function makeStatement($data) {
 
          case "insert_animal":
             $r = makeQuery($c,"INSERT INTO
-               `track_202190_animals`
+               `track_animals`
                (`user_id`, `name`, `type`, `breed`, `description`, `img`, `date_create`)
                VALUES
                (?, ?, ?, ?, ?, 'http://via.placeholder.com/400/?text=ANIMAL', NOW())
@@ -127,7 +127,7 @@ function makeStatement($data) {
 
          case "insert_location":
             $r = makeQuery($c,"INSERT INTO
-               `track_202190_locations`
+               `track_locations`
                (`animal_id`, `lat`, `lng`, `description`, `photo`, `icon`, `date_create`)
                VALUES
                (?, ?, ?, ?, 'http://via.placeholder.com/400/?text=PHOTO', 'http://via.placeholder.com/400/?text=ICON', NOW())
@@ -139,7 +139,7 @@ function makeStatement($data) {
 
          case "update_user":
             $r = makeQuery($c,"UPDATE
-               `track_202190_users`
+               `track_users`
                SET
                   `username` = ?,
                   `name` = ?,
@@ -150,7 +150,7 @@ function makeStatement($data) {
 
          case "update_user_password":
             $r = makeQuery($c,"UPDATE
-               `track_202190_users`
+               `track_users`
                SET
                   `password` = md5(?)
                WHERE `id` = ?
@@ -159,7 +159,7 @@ function makeStatement($data) {
 
          case "update_animal":
             $r = makeQuery($c,"UPDATE
-               `track_202190_animals`
+               `track_animals`
                SET
                   `name` = ?,
                   `type` = ?,
@@ -171,7 +171,7 @@ function makeStatement($data) {
 
          case "update_location":
             $r = makeQuery($c,"UPDATE
-               `track_202190_locations`
+               `track_locations`
                SET
                   `description` = ?
                WHERE `id` = ?
