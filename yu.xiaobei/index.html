@@ -16,6 +16,7 @@
    <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/maps.js"></script>
+   <script src="js/forms.js"></script>
 
    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAodhiA-T13U5In8xHSMX_QS-0Nv64lwQk"
@@ -164,7 +165,7 @@
                <a href="#page-user-edit">Update User Info</a>
             </li>
             <li>
-               <a href="#page-user-edit">Change Password</a>
+               <a href="#page-user-edit-password">Change Password</a>
             </li>
             <li>
                <a href="#" class="js-logout">Logout</a>
@@ -179,7 +180,7 @@
          <ul>
             <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
-            <li><a href="#" data-rel="back">Save</a></li>
+            <li><a href="#" class="js-submituseredit">Save</a></li>
          </ul>
       </header>
       <div data-role="main">
@@ -188,6 +189,33 @@
             <div class="flex-stretch position-relative">
                <div class="fill-parent overscroll position-absolute padding-md">
 
+               </div>
+            </div>
+         </form>
+      </div>
+   </section>
+   <section data-role="page" id="page-user-edit-password">
+      <header data-role="header">
+         <h1>Edit Password</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-submituserpassword">Save</a></li>
+         </ul>
+      </header>
+      <div data-role="main">
+
+         <form class="fill-parent display-flex flex-vertical" id="user-edit-password-form" data-ajax="false">
+            <div class="flex-stretch position-relative">
+               <div class="fill-parent overscroll position-absolute padding-md">
+                  <div class="form-control">
+                     <label for="user-password-initial" class="form-label">Type Password</label>
+                     <input type="password" id="user-password-initial" class="form-input" data-role="none" placeholder="Type A New Password">
+                  </div>
+                  <div class="form-control">
+                     <label for="user-password-confirm" class="form-label">Confirm Password</label>
+                     <input type="password" id="user-password-confirm" class="form-input" data-role="none" placeholder="Confirm New Password">
+                  </div>
                </div>
             </div>
          </form>
@@ -238,8 +266,8 @@
                </div>
             </div>
             <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-list" class="form-button">Save</a>
+               <button type="submit" class="form-button">Save</button>
+               <!--<a href="#page-list" class="form-button">Save</a>-->
             </div>
          </form>
       </div>
@@ -249,27 +277,20 @@
       <header data-role="header">
          <h1>Choose Animal</h1>
          <ul>
-            <li><a href="#" data-rel="back"><span class="nav-icon"><img class="icon" src="img/icons/back.svg"></span>
-</a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#page-location-set-location">Next</a></li>
          </ul>
       </header>
       <div data-role="main">
-         <form name="select-animal-form" id="select-animal-form">
-            <input type="checkbox" id="animal1" name="animal1" value="Animal1">
-            <label for="animal1"> Animal1</label><br>
-            <input type="checkbox" id="animal2" name="animal2" value="Animal2">
-            <label for="animal2"> Animal2</label><br>
-            <input type="checkbox" id="animal3" name="animal3" value="Animal3">
-            <label for="animal3"> Animal3</label><br>
-            <input type="checkbox" id="animal4" name="animal4" value="Animal4">
-            <label for="animal4"> Animal4</label><br>
-            <input type="checkbox" id="animal5" name="animal5" value="Animal5">
-            <label for="animal5"> Animal5</label><br>
-            <input type="checkbox" id="animal6" name="animal6" value="Animal6">
-            <label for="animal6"> Animal6</label><br>
-         </form>
+         Animal!
+      <div data-role="main" style="padding:1em">
+         <input type="hidden" id="location-animal-choice">
+         <div>
+            <a href="#page-animal-add">Make a new animal</a>
+         </div>
+         <p>Or</p>
+         <div class="form-select location-animal-choice-select"></div>
       </div>
    </section>
 
@@ -277,13 +298,15 @@
       <header data-role="header">
          <h1>Set Location</h1>
          <ul>
-            <li><a href="#" data-rel="back"><span class="nav-icon"><img class="icon" src="img/icons/back.svg"></span>
-</a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#page-location-description">Next</a></li>
          </ul>
       </header>
       <div data-role="main">
+         Animal!
+         <input type="hidden" id="location-lat">
+         <input type="hidden" id="location-lng">
          <div class="map"></div>
       </div>
    </section>
@@ -292,16 +315,23 @@
       <header data-role="header">
          <h1>Description</h1>
          <ul>
-            <li><a href="#" data-rel="back"><span class="nav-icon"><img class="icon" src="img/icons/back.svg"></span>
-</a></li>
+            <li><a href="#" data-rel="back">Back</a></li>
             <li class="flex-stretch"></li>
             <li><a href="#" class="js-navigate-back">Save</a></li>
+            <li><a href="#" class="js-submitlocationform">Save</a></li>
          </ul>
       </header>
       <div data-role="main">
          <form action="">
+         <form action="" style="padding:1em">
             <input type="hidden" id="location-navigateback" value="-3">
+
+            <div class="form-control">
+               <label for="location-description" class="form-label">Describe the animal</label>
+               <textarea id="location-description" class="form-input" data-role="none" placeholder="What did it look like?"></textarea>
+            </div>
          </form>
+         Animal!
       </div>
    </section>
 
@@ -320,8 +350,8 @@
                </div>
             </div>
             <div class="flex-none padding-md">
-               <!-- <button type="submit" class="form-button">Save</button> -->
-               <a href="#page-list" class="form-button">Save</a>
+               <button type="submit" class="form-button">Save</button>
+               <!--<a href="#page-list" class="form-button">Save</a>-->
             </div>
          </form>
       </div>

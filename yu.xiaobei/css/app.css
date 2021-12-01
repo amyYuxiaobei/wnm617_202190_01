@@ -473,3 +473,33 @@ a {
 .animal-popup-image img {
    max-width: 50px;
 } 
+.form-select select {
+  background-color: var(--color-neutral-light);
+  border-width: 0;
+  padding: 0.5em 1em;
+  font: inherit;
+  border-radius: 4px;
+  width: 100%;
+  -webkit-appearance: none;
+}
+.form-select {
+ position: relative;
+}
+.form-select::after {
+ content: '▼';
+ position: absolute;
+ right: 0.5em;
+ top: 50%;
+ transform: translateY(-50%);
+ font-size: 0.8em;
+ color: var(--color-neutral-medium);
+}
+.animal-profile-bottom .section {
+  display: none;
+}
+.animal-profile-bottom .section.active {
+  display: block;
+}
+.animal-profile-middle li.active {
+  background-color: var(--color-main-light);
+}
