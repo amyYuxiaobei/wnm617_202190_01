@@ -22,7 +22,13 @@ const makeUserProfile = (o) => `
 <div>
    <h2>${o.name}</h2>
    <h3>&commat;${o.username}</h3>
-   <div><a href="#page-user-settings">Settings</a></div>
+   <header data-role="header" class="floating-header">
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#page-user-settings">Settings</a></li>
+         </ul>
+      </header>
 </div>
 `;
 
