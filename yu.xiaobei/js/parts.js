@@ -19,16 +19,19 @@ const makeUserProfile = (o) => `
 <div class="user-profile-image">
    <img src="${o.img}" alt="">
 </div>
-<div>
-   <h2>${o.name}</h2>
-   <h3>&commat;${o.username}</h3>
-   <header data-role="header" class="floating-header">
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#page-user-settings">Settings</a></li>
-         </ul>
-      </header>
+<div style="margin: 0 auto">
+   <h2>Name:</h2> <i>${o.name}</i>
+   <h3>UserName:</h3> <i>&commat;${o.username}</i>
+   <h3>Password:</h3> <i>****</i>
+   <div data-role="none" class="settings floater right">
+      <a href="#page-user-edit"><span class="nav-icon"><img class="icon" src="img/icons/edit.svg"></span></a>
+   </div>
+   <div data-role="none" class="change-pwd floater right">
+   <a href="#page-user-edit-password"><span class="nav-icon"><img class="icon" src="img/icons/edit.svg"></span></a>
+   </div>
+   <div class="flex-none padding-md">
+      <button type="submit" class="js-logout">Log out</button>
+   </div>
 </div>
 `;
 
