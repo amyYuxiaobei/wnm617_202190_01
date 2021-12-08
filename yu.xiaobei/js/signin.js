@@ -27,7 +27,7 @@ const checkSigninForm = async() => {
 
 
 const checkUserId = () => {
-   let p = ['#page-signin','#page-signup','#page-signup2'];
+   let p = ['#page-signin','#page-signup',''];
 
    if(sessionStorage.userId === undefined) {
       // not logged in
