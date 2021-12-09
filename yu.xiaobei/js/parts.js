@@ -20,20 +20,47 @@ const makeUserProfile = (o) => `
    <img src="${o.img}" alt="">
 </div>
 <div style="margin: 0 auto">
-   <h2>Name:</h2> <i>${o.name}</i>
-   <h3>UserName:</h3> <i>&commat;${o.username}</i>
-   <h3>Password:</h3> <i>****</i>
-   <div data-role="none" class="settings floater right">
-      <a href="#page-user-edit"><span class="nav-icon"><img class="icon" src="img/icons/edit.svg"></span></a>
-   </div>
+   <h2>Name:</h2> 
    <div data-role="none" class="change-pwd floater right">
-   <a href="#page-user-edit-password"><span class="nav-icon"><img class="icon" src="img/icons/edit.svg"></span></a>
+       <a href="#page-user-edit"><span class="nav-icon"><img class="icon" src="img/icons/edit.svg"></span></a>
    </div>
+   <i>${o.name}</i>
+   <h3>UserName:</h3>
+   <i>&commat;${o.username}</i>
+   <h3>Password:</h3>
+   <div data-role="none" class="settings floater right">
+      <a href="#page-user-edit-password"><span class="nav-icon"><img class="icon" src="img/icons/edit.svg"></span></a>
+   </div>
+    <i>****</i>
+   
    <div class="flex-none padding-md">
       <button type="submit" class="js-logout">Log out</button>
    </div>
 </div>
 `;
+
+const makeAnimalListSet = (arr,target="#page-list .animallist") => {
+   $(".filter-bar").html(makeFilterList(arr));
+   $(target).html(makeAnimalList(arr));
+}
+
+const capitalize = s => s[0].toUpperCase()+s.substr(1);
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>o?`<a href="#" data-filter="${type}" data-value="${o}">${capitalize(o)}</a>`:'')(a);
+}
+
+
+const makeFilterList = (animals) => {
+   return `
+   <a href="#" data-filter="type" data-value="">All</a>
+   <div>|</div>
+   ${filterList(animals,'type')}
+   <div>|</div>
+   ${filterList(animals,'breed')}
+   `;
+} 
 
 
 
